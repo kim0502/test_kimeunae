@@ -107,12 +107,12 @@
 	for (i = 0; i < field.length; i++) {
 	field[i].checked = true;}
 	checkflag = "true";
-	return "Uncheck All"; }
+	return "전체 해제"; }
 	else {
 	for (i = 0; i < field.length; i++) {
 	field[i].checked = false; }
 	checkflag = "false";
-	return "Check All"; }
+	return "전체 선택"; }
 	}
 
 </script> 
@@ -134,7 +134,7 @@
 				<td>${dto.pName }</td>
 				<td>${dto.cQuantity}</td>
 				<td>가격</td>
-				<a href="deletecart.do?product_pCode=$del{dto.product_pCode}">X</a></td>
+				<td><a href="deletecart.do?product_pCode=$del{dto.product_pCode}">X</a></td>
 	</tr>	
 	</c:forEach>	
 	</table>

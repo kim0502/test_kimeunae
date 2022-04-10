@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 import com.javalec.team.command.Adduser_Command;
 import com.javalec.team.command.AllCategory_Command;
 import com.javalec.team.command.AllDetail_Command;
+import com.javalec.team.command.Deletecart_Command;
 import com.javalec.team.command.Finduserid_Command;
 import com.javalec.team.command.Finduserpw_Command;
 import com.javalec.team.command.InsertCart_Command;
@@ -25,6 +26,8 @@ import com.javalec.team.command.OfficeCategory_Command;
 import com.javalec.team.command.OfficeDetail_Command;
 import com.javalec.team.command.OrderpageCategory_Command;
 import com.javalec.team.command.PCommand;
+import com.javalec.team.command.Payment_Command;
+import com.javalec.team.command.Paymentrevise_Command;
 import com.javalec.team.command.ReviewWritepage_Command;
 import com.javalec.team.command.SearchAllCategory_Command;
 import com.javalec.team.command.SearchAllDetail_Command;
@@ -289,18 +292,18 @@ public class homecontroller extends HttpServlet {
 					break;									
 				
 				case("/deletecart.do")://장바구니삭제
-		//			command = new Delete_Command();
-		//			command.execute(request, response);
+					command = new Deletecart_Command();
+					command.execute(request, response);
 					viewPage = "wishlist.do";
 					break;
 				case("/payment.do")://결제
-		//			command = new Payment_Command();
-		//			command.execute(request, response);
+					command = new Payment_Command();
+					command.execute(request, response);
 					viewPage = "payment.jsp";
 					break;
 				case("/paymentrevise.do")://결제에서 물품 수정하기
-		//			command = new Paymentrevise_Command();
-		//			command.execute(request, response);
+					command = new Paymentrevise_Command();
+					command.execute(request, response);
 					viewPage = "payment.jsp";
 					break;
 				//장바구니(은애누나) 끝

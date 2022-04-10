@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -97,6 +98,26 @@
 	
 	<!-- 여기부터 넣으시면 됩니다 Start -->
 	<h1>결제</h1>
+	<form action="wishlist.do" method="post">
+	<input type="submit" value="수정하기" >
+
+	</form>
+	
+
+<form name="form">
+	<c:forEach items="${list }" var="dto">	
+
+	<tr>
+	
+				<td>${dto.pName }</td>
+				<td><img src="${dto.pImg_main}" width="300"></td>
+				<td>${dto.cQuantity}</td>
+				<td>가격</td>
+				
+	</tr>	
+				
+	</c:forEach>	
+</form>
 
 <h2>배송과 수령방법</h2>
 
