@@ -13,11 +13,11 @@ public class Deletecart_Command implements PCommand {
 	public void execute(HttpServletRequest request, HttpServletResponse response) {
 		// TODO Auto-generated method stub
 		
-		String product_pCode = request.getParameter("product_pCode");
+		String pCode = request.getParameter("product_pCode");
 		
 		
 		Deletecart_dao dao = new Deletecart_dao();
-		dao.deletecart(product_pCode); 
+		dao.deletecart(pCode); 
 		
 		
 	}

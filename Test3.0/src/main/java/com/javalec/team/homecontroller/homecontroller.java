@@ -296,6 +296,7 @@ public class homecontroller extends HttpServlet {
 					command.execute(request, response);
 					viewPage = "wishlist.do";
 					break;
+					
 				case("/payment.do")://결제
 					command = new Payment_Command();
 					command.execute(request, response);

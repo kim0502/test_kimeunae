@@ -21,8 +21,9 @@ public class Payment_dao {
 		}
 
 		}
+
 	
-	public void revise(String cQuantity, String product_pCode) {
+	public void inserto(int oPrice, int oQuantity,String product_pCode,String user_uId) {
 		Connection connection = null;
 		PreparedStatement preparedStatement = null;
 		
@@ -30,10 +31,12 @@ public class Payment_dao {
 
 		try {
 			connection = dataSource.getConnection();
-			String query = "update cart set cQuantity = ?  Where product_pCode = ?";
+			String query = "insert into ordering(oPrice,oDate,oQuantity,product_pCode,user_uId) values (?,now(),?,?,?) ";
 			preparedStatement = connection.prepareStatement(query);
-			preparedStatement.setInt(1, Integer.parseInt(cQuantity));
-			preparedStatement.setString(2, product_pCode);
+			preparedStatement.setInt(1,oPrice);
+			preparedStatement.setInt(2,oQuantity);
+			preparedStatement.setString(3, product_pCode);
+			preparedStatement.setString(4, user_uId);
 			preparedStatement.executeUpdate();
 
 		}catch (Exception e) {

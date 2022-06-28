@@ -10,7 +10,7 @@ import javax.sql.DataSource;
 public class Deletecart_dao {
 	
 	DataSource dataSource; // Servers-context.xml을 가져올거임
-	public void Deletecart_Command() {
+	public Deletecart_dao() {
 		
 	try {
 		Context context = new InitialContext();
@@ -20,20 +20,19 @@ public class Deletecart_dao {
 	}
 	}
 
-	public void deletecart(String product_pCode) {
+	public void deletecart(String pCode) {
 
 		Connection connection = null;
 		PreparedStatement preparedStatement = null;
-		
+	
 
 		try {
 		connection = dataSource.getConnection();
-		String deletecart = "delete from cart where product_pCode = ?";
-		preparedStatement = connection.prepareStatement(deletecart);
-
-		preparedStatement.setString(1, product_pCode);
+		String query = "delete from cart where product_pCode = ?";
+		preparedStatement = connection.prepareStatement(query);
+		preparedStatement.setString(1, pCode);
 		preparedStatement.executeUpdate();
-
+	
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally { // 이상이 있거나 없거나 온다.

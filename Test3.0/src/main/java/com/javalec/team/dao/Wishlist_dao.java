@@ -40,7 +40,7 @@ public class Wishlist_dao {
 
 		connection = dataSource.getConnection();
 
-		String query = "select p.pName, p.pImg_main, c.cQuantity, c.cDate, p.pCode, c.product_pCode "
+		String query = "select p.pName, p.pImg_main, c.cQuantity, c.cDate, p.pCode, p.pPrice, c.product_pCode "
 				+"from product as p, cart as c "
 				+"where p.pCode = c.product_pCode";
 		
@@ -59,9 +59,12 @@ public class Wishlist_dao {
 		Timestamp cDate = resultSet.getTimestamp("cDate");
 		
 		String pCode = resultSet.getString("pCode");
+		
+		int pPrice = resultSet.getInt("pPrice");
+		
 		String product_pCode = resultSet.getString("product_pCode");
 
-		Wishlist_dto dto = new Wishlist_dto(pName, pImg_main, cQuantity, cDate, pCode,product_pCode);
+		Wishlist_dto dto = new Wishlist_dto(pName, pImg_main, cQuantity, cDate, pCode, pPrice, product_pCode);
 
 		dtos.add(dto);
 

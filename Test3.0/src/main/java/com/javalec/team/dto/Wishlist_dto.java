@@ -10,6 +10,7 @@ public class Wishlist_dto {
 	int cQuantity;
 	Timestamp cDate;
 	String pCode;
+	int pPrice;
 	String product_pCode;
 	
 	//Constructor
@@ -22,7 +23,8 @@ public class Wishlist_dto {
 	
 
 
-	public Wishlist_dto(String pName, String pImg_main, int cQuantity, Timestamp cDate, String pCode,
+
+	public Wishlist_dto(String pName, String pImg_main, int cQuantity, Timestamp cDate, String pCode, int pPrice,
 			String product_pCode) {
 		super();
 		this.pName = pName;
@@ -30,8 +32,10 @@ public class Wishlist_dto {
 		this.cQuantity = cQuantity;
 		this.cDate = cDate;
 		this.pCode = pCode;
+		this.pPrice = pPrice;
 		this.product_pCode = product_pCode;
 	}
+
 
 
 	//Method
@@ -44,9 +48,11 @@ public class Wishlist_dto {
 
 
 
+
 	public void setpName(String pName) {
 		this.pName = pName;
 	}
+
 
 
 
@@ -58,9 +64,11 @@ public class Wishlist_dto {
 
 
 
+
 	public void setpImg_main(String pImg_main) {
 		this.pImg_main = pImg_main;
 	}
+
 
 
 
@@ -72,9 +80,11 @@ public class Wishlist_dto {
 
 
 
+
 	public void setcQuantity(int cQuantity) {
 		this.cQuantity = cQuantity;
 	}
+
 
 
 
@@ -86,9 +96,11 @@ public class Wishlist_dto {
 
 
 
+
 	public void setcDate(Timestamp cDate) {
 		this.cDate = cDate;
 	}
+
 
 
 
@@ -100,15 +112,35 @@ public class Wishlist_dto {
 
 
 
+
 	public void setpCode(String pCode) {
 		this.pCode = pCode;
 	}
 
 
-	
+
+
+
+	public int getpPrice() {
+		return pPrice;
+	}
+
+
+
+
+
+	public void setpPrice(int pPrice) {
+		this.pPrice = pPrice;
+	}
+
+
+
+
+
 	public String getProduct_pCode() {
 		return product_pCode;
 	}
+
 
 
 
@@ -120,18 +152,10 @@ public class Wishlist_dto {
 
 
 
-	
 
-
-	
 
 
 	
-
-	
-	
-
-
 
 	
 }
